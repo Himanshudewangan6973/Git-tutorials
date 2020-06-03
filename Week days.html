@@ -1,0 +1,67 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="week.css">
+  <title>Week days</title>
+  <script language="javascript" type="text/javascript">
+    var input = getElementById("number");
+    input.addEventListener("keyup", function(event){
+      if(event.keyCode === 13) {
+        event.preventDefault();
+        document.getElementById("name").click();
+      }
+    });
+    function printDay(){
+      var n=parseInt(document.getElementById("number").value);
+      var word;
+      switch(n){
+        case 1 : word="Sunday";break;
+      case 2 : word="Monday";break;
+      case 3 : word="Tuesday";break;
+      case 4 : word="Wednesday";break
+      case 5 : word="Thursday";break;
+      case 6 : word="Friday";break;
+      case 7 : word="Sunday";break;
+    }
+    document.write("The Day is : "+word);
+  }
+  </script>
+</head>
+<body>
+    <div id="back"></div>
+    <div class="star-1 stars"></div>
+    <div class="star-2 stars"></div>
+    <div class="star-3 stars"></div>
+    <header>Enter  a number between : 1 - 7 to find which day it is ? </header>
+    <div>
+      <input type="text" id="number" value="" placeholder="Some Text...">
+      <button onClick="printDay()" type="button" id="name" name="Calculate Day">
+        Calculate Day
+      </button>
+    </div>
+    <div class="penguin">
+      <div class="penguin-bottom">
+        <div class="right-hand"></div>
+        <div class="left-hand"></div>
+        <div class="right-feet"></div>
+        <div class="left-feet"></div>
+      </div>
+      <div class="penguin-top">
+        <div class="right-cheek"></div>
+        <div class="left-cheek"></div>
+        <div class="belly"></div>
+        <div class="right-eye">
+          <div class="sparkle"></div>
+        </div>
+        <div class="left-eye">
+          <div class="sparkle"></div>
+        </div>
+        <div class="blush-right"></div>
+        <div class="blush-left"></div>
+        <div class="beak-top"></div>
+        <div class="beak-bottom"></div>
+      </div>
+    </div>
+    <div class="heart"></div>
+</body>
+</html>
