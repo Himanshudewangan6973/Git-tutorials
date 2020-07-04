@@ -1,12 +1,11 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <link rel="stylesheet" href="index.css">
-  <title>Astonishing Look</title>
+  <link rel="stylesheet" href="week.css">
+  <title>Week days</title>
   <script language="javascript" type="text/javascript">
     var input = getElementById("number");
-    input.addEventListener("keyup", function(event){
-      if(event.keyCode === 13) {
+    input.addEventListener("keyup", function(event) { if(event.keyCode === 13) {
         event.preventDefault();
         document.getElementById("name").click();
       }
@@ -16,26 +15,27 @@
       var word;
       switch(n){
         case 1 : word="Sunday";break;
-      case 2 : word="Monday";break;
-      case 3 : word="Tuesday";break;
-      case 4 : word="Wednesday";break
-      case 5 : word="Thursday";break;
-      case 6 : word="Friday";break;
-      case 7 : word="Sunday";break;
-    }
-    document.write("The Day is : "+word);
-  }
+        case 2 : word="Monday";break;
+        case 3 : word="Tuesday";break;
+        case 4 : word="Wednesday";break
+        case 5 : word="Thursday";break;
+        case 6 : word="Friday";break;
+        case 7 : word="Sunday";break;
+      }
+      alert("The Day is : "+word);
+      }
   </script>
 </head>
 <body>
-    <div id="back">
+    <div id="container">
+      <div id="back"></div>
     <div class="star-1 stars"></div>
     <div class="star-2 stars"></div>
     <div class="star-3 stars"></div>
-    <header>Enter  a number between : 1 - 7 to find which day it is ? </header>
-    </div>
-    <div>
-      <input type="text" id="number" value="" placeholder="Some Text...">
+    <div class="star-4 stars"></div>
+    <div id="input">
+      <p id="head">Enter  a number between : 1 - 7 to find which day it is ? </p>
+      <input type="text" id="number" value="" placeholder="type a week-day number">
       <button onClick="printDay()" type="button" id="name" name="Calculate Day">
         Calculate Day
       </button>
@@ -62,7 +62,8 @@
         <div class="beak-top"></div>
         <div class="beak-bottom"></div>
       </div>
+      <div class="heart"></div>
     </div>
-    <div class="heart"></div>
+    </div>
 </body>
 </html>

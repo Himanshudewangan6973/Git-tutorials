@@ -1,62 +1,46 @@
-.stars {
-    background-color: white;
-    height: 30px;
-    width: 30px;
-    border-radius: 50%;
-    animation-iteration-count: infinite;
-    position: fixed;
-  }
-
-.star-1 {
-    margin-top: 13%;
-    margin-left: 60%;
-    animation-duration: 1s;
-    animation-name: twinkle;
-  }
-
-.star-2 {
-    margin-top: 5%;
-    margin-left: 25%;
-    animation-duration: .9s;
-    animation-name: twinkle;
-  }
-
-.star-3 {
-    margin-top: 7%;
-    margin-left: 70%;
-    animation-duration: 1.1s;
-    animation-name: twinkle;
-  }
-
-@keyframes twinkle {
-    20% {
-      transform: scale(0.5);
-      opacity: 0.5;
-    }
-  }
-
-  #back {
-    position: fixed;
-    padding: 0;
-    margin: 0;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(black, blue, #66c2ff, #ffcccc, #ffeee6);
-  }
-
-
-body{
-  font-style: normal;
-  font-family: sans-serif;
-  background-color: white;
+* {
+  box-sizing: border-box;
 }
 
-header{
-  text-align: center;
-  font-size: 30px;
+body {
+  background-color: white;
+  font-family: sans-serif;
+  font-style: normal;
+  height: 100vh;
+  overflow: hidden;
+  width: 100%;
+  /*z-index: 10;*/
+}
+
+#back {
+  position: fixed;
+  padding: 0;
+  margin: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgb(6, 82, 153), rgb(16, 145, 189), #616f79, #575151, #3f3c3b);
+  /*z-index: 0;*/
+}
+
+#container {
+  display: flex;
+  justify-content: left;
+  height: 100vh;
+  width: 100vw;
+}
+
+#head {
+  align-items: center;
   color: white;
+  display: flex;
+  font-size: 30px;
+  justify-content: center;
+  position: relative;
+  text-align: center;
+  top: 350px;
+  /*z-index: 5000;*/
 }
 
 input{
@@ -71,47 +55,93 @@ input{
     rgba(255, 0, 0, 0.5) 275px);
   position: absolute;
   left: 40%;
-  top: 70%;
+  top: 60%;
 }
 
 button{
-  margin: 20px;
+  background-color: #4CAF50;
   border-radius: 15px;
   border: none;
-  padding: 15px 32px;
-  background-color: #4CAF50;
-  font-size: 16px;
   color: white;
-  margin: 4px 2px;
   cursor: pointer;
-  position: absolute;
+  font-size: 16px;
   left: 45%;
+  margin: 4px 2px;
+  padding: 15px 32px;
+  position: absolute;
   top: 80%;
 }
 
+/*   Stars*/
+
+.stars {
+  background-color: white;
+  position: fixed;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  animation-iteration-count: infinite;
+}
+
+.star-1 {
+  margin-top: 150px;
+  margin-left: 600px;
+  animation-duration: 1s;
+  animation-name: twinkle;
+}
+
+.star-2 {
+  margin-top: 250px;
+  margin-left: 300px;
+  animation-duration: .9s;
+  animation-name: twinkle;
+}
+
+.star-3 {
+  margin-top: 100px;
+  margin-left: 500px;
+  animation-duration: 1.1s;
+  animation-name: twinkle;
+}
+
+.star-4 {
+  margin-top: 50px;
+  margin-left: 1000px;
+  animation-duration: 1.01s;
+  animation-name: twinkle;
+}
+
+@keyframes twinkle {
+  20% {
+    transform: scale(0.5);
+    opacity: 0.5;
+  }
+}
+
+
+/*  Penguin */
 
 :root {
     --penguin-size: 300px;
-    --penguin-skin: gray;
+    --penguin-skin: rgb(75, 74, 74);
     --penguin-belly: white;
-    --penguin-beak: orange;
+    --penguin-beak: rgb(255, 166, 0);
+    --beat-color: rgb(255, 61, 94);
+    --blush: rgb(236, 91, 115);
   }
 
   @media (max-width: 350px) {
     :root {
-      /* Only change code below this line */
-
-      /* Only change code above this line */
     }
   }
 
   .penguin {
-    position: relative;
-    margin: auto;
+    position: fixed;
+    margin: auto 85px;
     display: block;
-    margin-top: 3%;
     width: var(--penguin-size, 300px);
     height: var(--penguin-size, 300px);
+    z-index: 100;
   }
 
   .right-cheek {
@@ -226,7 +256,7 @@ button{
   .right-eye {
     top: 45%;
     left: 60%;
-    background: black;
+    background: var(--penguin-skin, gray);
     width: 15%;
     height: 17%;
     border-radius: 50%;
@@ -235,7 +265,7 @@ button{
   .left-eye {
     top: 45%;
     left: 25%;
-    background: black;
+    background: var(--penguin-skin, gray);
     width: 15%;
     height: 17%;
     border-radius: 50%;
@@ -250,10 +280,13 @@ button{
     border-radius: 50%;
   }
 
+  .sparkle:hover {
+    display: none;
+  }
   .blush-right {
     top: 65%;
     left: 15%;
-    background: pink;
+    background: var(--blush);
     width: 15%;
     height: 10%;
     border-radius: 50%;
@@ -262,7 +295,7 @@ button{
   .blush-left {
     top: 65%;
     left: 70%;
-    background: pink;
+    background: var(--blush);
     width: 15%;
     height: 10%;
     border-radius: 50%;
@@ -296,21 +329,24 @@ button{
 
 
   .heart {
-    position: fixed;
-    margin: auto;
-    margin-top: 190px;
-    margin-left: 51%;
+    animation-name: beat;
+    animation-duration: 500ms;
+    animation-iteration-count: infinite;
+    animation-delay: 0;
+    position: relative;
+    margin: 170px 170px;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
-    background-color: rgb(221, 64, 124);
+    background-color: var(--beat-color);
     height: 30px;
     width: 30px;
-    transform: rotate(-43deg);
+    transform: rotate(-45deg);
+    /*z-index: 101;*/
   }
   .heart::after {
-    background-color: rgb(221, 64, 124);
+    background-color: var(--beat-color);
     content: "";
     border-radius: 50%;
     position: absolute;
@@ -321,11 +357,21 @@ button{
   }
   .heart::before {
     content: "";
-    background-color: rgb(221, 64, 124);
+    background-color: var(--beat-color);
     border-radius: 50%;
     position: absolute;
     width: 30px;
     height: 30px;
     top: -17px;
     left: 0px;
+  }
+
+  @keyframes beat {
+    60% {
+      transform: scale(1.2);
+      transform: rotate(-45deg);
+    }
+    90% {
+      transform: rotate(-45deg);
+    }
   }
